@@ -3,9 +3,9 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
-def base():
+def inicio():
     autor = 'Zamudio Garcia Patricia'
-    return render_template('base.html', autor=autor)
+    return render_template('inicio.html', autor=autor)
 
 
 @app.route('/animales')
