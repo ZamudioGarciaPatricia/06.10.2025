@@ -1,24 +1,27 @@
 from flask import Flask, render_template
 
-app = (__name__)
+app = Flask(__name__)
 
 @app.route('/')
-def index():
-    return render_template('base.html')
+def base():
+    autor = 'Zamudio Garcia Patricia'
+    return render_template('base.html', autor=autor)
+
+
 @app.route('/animales')
-def index():
+def animales():
     return render_template('animales.html')
 
 @app.route('/carros')
-def index():
+def carros():
     return render_template('base.html')
 
 @app.route('/acerca')
-def index():
+def acerca():
     return render_template('base.html')
 
 @app.route('/maravillas')
-def index():
+def maravillas():
     return render_template('base.html')
 
 
