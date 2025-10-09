@@ -14,4 +14,5 @@ _Materia: Emplea frameworks para el desarrollo de software_
 
 _Gmail: 24308060610116@cetis61.edu.mx_
 
-_De que trata:Durante las clases del 03.10.2025 al jueves 09.10.2025 elaboramos en clase y en nuestra casa un stito web que contenga 
+_De que trata:Durante las clases del 03.10.2025 al jueves 09.10.2025 elaboramos en clase y en nuestra casa un stito web que contenga cada una de las especificaciones que nos dieron ademas de aprender a usar plantillas con django2 y con ayuda de bootstrap 5_
+
