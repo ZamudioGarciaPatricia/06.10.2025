@@ -1,86 +1,64 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vehículos Antiguos</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="bg-light">
+{% extends "base.html" %}
 
-  <!-- Encabezado -->
-  <header class="bg-secondary text-white text-center py-4">
-    <h1>Vehículos Antiguos</h1>
-  </header>
+{% block title %}Vehículos Antiguos{% endblock %}
 
-  <!-- Menú -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+{% block content %}
+<div class="row">
     <div class="container">
-      <a class="navbar-brand" href="index.html">Inicio</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuVehiculos" aria-controls="menuVehiculos" aria-expanded="false" aria-label="Alternar navegación">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="menuVehiculos">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="#">Vehículos antiguos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Animales exóticos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Las Maravillas del Mundo</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Acerca de...</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Contenido principal -->
-  <main class="container my-5">
-    <h2 class="text-center mb-4">Clásicos que marcaron historia</h2>
-    <p class="lead text-center">
-      Los vehículos antiguos representan el arte, la ingeniería y la elegancia de épocas pasadas.  
-      Aquí te mostramos algunos modelos emblemáticos.
-    </p>
-
-    <div class="row mt-5 g-4">
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <img src="ford_model_t.jpg" class="card-img-top" alt="Ford Model T">
-          <div class="card-body">
-            <h5 class="card-title">Ford Model T</h5>
-            <p class="card-text">Lanzado en 1908, revolucionó la industria automotriz con producción en serie y democratizó el acceso a los autos.</p>
-          </div>
+        <h1 class="text-center mt-5 mb-5">Vehículos Antiguos</h1>
+        <p>Los vehículos antiguos son un testimonio de la evolución de la industria automotriz. A continuación, te presentamos un poco de historia sobre el nacimiento de los vehículos y 5 vehículos antiguos emblemáticos.</p>
+        <h2>Historia de los Vehículos</h2>
+        <p>El primer vehículo a vapor fue inventado en el siglo XVIII. Sin embargo, no fue hasta el siglo XIX que se desarrollaron los primeros vehículos con motor de combustión interna.</p>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>5 Vehículos Antiguos Emblemáticos</h2>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="/static/img/fordmodelt.jpeg" class="card-img-top" alt="Ford Model T">
+                    <div class="card-body">
+                        <h5 class="card-title">Ford Model T (1908)</h5>
+                        <p class="card-text">El Ford Model T fue un automóvil revolucionario que se produjo en masa y se convirtió en un símbolo de la industria automotriz estadounidense.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="/static/img/mercedes.jpeg" class="card-img-top" alt="Mercedes-Benz 300SL">
+                    <div class="card-body">
+                        <h5 class="card-title">Mercedes-Benz 300SL (1954)</h5>
+                        <p class="card-text">El Mercedes-Benz 300SL es un automóvil deportivo que se caracteriza por su diseño aerodinámico y su motor de 6 cilindros en línea.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="/static/img/cadilac.jpeg" class="card-img-top" alt="Cadillac Eldorado">
+                    <div class="card-body">
+                        <h5 class="card-title">Cadillac Eldorado (1953)</h5>
+                        <p class="card-text">El Cadillac Eldorado es un automóvil de lujo que se caracteriza por su diseño elegante y su motor V8.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="/static/img/belair.jpeg" class="card-img-top" alt="Chevrolet Bel Air">
+                    <div class="card-body">
+                        <h5 class="card-title">Chevrolet Bel Air (1955)</h5>
+                        <p class="card-text">El Chevrolet Bel Air es un automóvil que se caracteriza por su diseño aerodinámico y su motor V8.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="/static/img/jaguar.jpeg" class="card-img-top" alt="Jaguar XK120">
+                    <div class="card-body">
+                        <h5 class="card-title">Jaguar XK120 (1948)</h5>
+                        <p class="card-text">El Jaguar XK120 es un automóvil deportivo que se caracteriza por su diseño elegante y su motor de 6 cilindros en línea.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <img src="chevrolet_bel_air.jpg" class="card-img-top" alt="Chevrolet Bel Air">
-          <div class="card-body">
-            <h5 class="card-title">Chevrolet Bel Air</h5>
-            <p class="card-text">Icono de los años 50 en Estados Unidos, famoso por su diseño elegante y detalles cromados.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <img src="volkswagen_beetle.jpg" class="card-img-top" alt="Volkswagen Beetle">
-          <div class="card-body">
-            <h5 class="card-title">Volkswagen Beetle</h5>
-            <p class="card-text">Un auto clásico alemán de gran popularidad mundial, producido desde 1938, conocido por su diseño redondeado y confiabilidad.</p>
-          </div>
-        </div>
-      </div>
     </div>
-
-    <div class="text-center mt-4">
-      <a href="index.html" class="btn btn-secondary">Volver al inicio</a>
-    </div>
-  </main>
-
-  <!-- Pie de página -->
-  <footer class="bg-dark text-white text-center py-3">
-    <p class="mb-0">&copy; 2025 - Vehículos Antiguos</p>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+</div>
+{% endblock %}
