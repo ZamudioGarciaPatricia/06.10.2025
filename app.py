@@ -24,5 +24,9 @@ def acerca_de():
     return render_template('acerca.html', autor=AUTOR)
 
 
+@app.route('/sesion') 
+def sesion():
+    return render_template('sesion.html', autor=AUTOR)
+
 if __name__ =="__main__":
     app.run(debug=True)
