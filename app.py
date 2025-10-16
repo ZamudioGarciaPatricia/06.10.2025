@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for, Flask
 
 app = Flask(__name__)
 AUTOR = "patricia Zamudio Garcia"
@@ -26,7 +26,11 @@ def acerca_de():
 
 @app.route('/sesion') 
 def sesion():
-    return render_template('sesion.html', autor=AUTOR)
+    return ""
+@app.route("/registro" method = ("GET", "POST"))
+def registro():
+    if request.method == "POST":
+        
 
 if __name__ =="__main__":
     app.run(debug=True)
