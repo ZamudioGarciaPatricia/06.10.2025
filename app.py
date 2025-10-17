@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 
 app = Flask(__name__)
-app.secret_key = 'tu_clave_secreta' # Necesario para usar flash
+app.secret_key = 'tu_clave_secreta'
 AUTOR = "patricia Zamudio Garcia"
 
 @app.route('/')
@@ -59,7 +59,7 @@ def register_user():
         
         
         if not nombre or not email or not contraseña:
-             error = "Faltan campos obligatorios."
+        error = "Faltan campos obligatorios."
 
         
         if error is not None:

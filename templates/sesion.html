@@ -11,11 +11,12 @@
     <form method="post" action="{{ url_for('register_user')}}">
         <section class="row">
             <div class="col-6 mb-3">
+                
                 <label for="nombre" class="form-label"></label>
                 <input type="text" class="form-control" name="nombre"  placeholder="Nombre"
-                       value="{{ request.form.get('nombre', '') }}"
-                       required
-                       aria-required="true">
+                    value="{{ request.form.get('nombre', '') }}"
+                    required
+                    aria-required="true">
             </div>
             <div class="col-6 mb-3">
                 <label for="apellido" class="form-label"></label>
@@ -28,10 +29,10 @@
             <div class="col-4 mb-3">
                 <div class="form-floating">
                     <select class="form-select" id="mes" name="mes" aria-label="Select Mes">
-                        <option value="" {% if not request.form.get('mes') %}selected{% endif %}>mes</option>
-                        <option value="enero" {% if request.form.get('mes') == 'enero' %}selected{% endif %}>enero</option>
-                        <option value="febrero" {% if request.form.get('mes') == 'febrero' %}selected{% endif %}>febrero</option>
-                        <option value="marzo" {% if request.form.get('mes') == 'marzo' %}selected{% endif %}>marzo</option>
+                        <option value="" {% if not request.form.get %}selected{% endif %}>mes</option>
+                        <option value="enero" {% if request.form.get %}selected{% endif %}>enero</option>
+                        <option value="febrero" {% if request.form.get %}selected{% endif %}>febrero</option>
+                        <option value="marzo" {% if request.form.get %}selected{% endif %}>marzo</option>
                         </select>
                     <label for="floatingSelectOne"></label>
                 </div>
@@ -40,12 +41,12 @@
             <div class="col-4 mb-3">
                 <div class="form-floating">
                     <select class="form-select" id="Dias" name="Dias" aria-label="Select Dia">
-                        <option value="" {% if not request.form.get('Dias') %}selected{% endif %}>dia</option>
-                        <option value="1" {% if request.form.get('Dias') == '1' %}selected{% endif %}>1</option>
-                        <option value="2" {% if request.form.get('Dias') == '2' %}selected{% endif %}>2</option>
-                        <option value="3" {% if request.form.get('Dias') == '3' %}selected{% endif %}>3</option>
-                        <option value="4" {% if request.form.get('Dias') == '4' %}selected{% endif %}>4</option>
-                        <option value="5" {% if request.form.get('Dias') == '5' %}selected{% endif %}>5</option>
+                        <option value="" {% if not request.form.get %}selected{% endif %}>dia</option>
+                        <option value="1" {% if request.form.get %}selected{% endif %}>1</option>
+                        <option value="2" {% if request.form.get %}selected{% endif %}>2</option>
+                        <option value="3" {% if request.form.get %}selected{% endif %}>3</option>
+                        <option value="4" {% if request.form.get %}selected{% endif %}>4</option>
+                        <option value="5" {% if request.form.get %}selected{% endif %}>5</option>
                         </select>
                     <label for="floatingSelectTwo">o</label>
                 </div>
@@ -54,11 +55,11 @@
             <div class="col-4 mb-3 text-end">
                 <div class="form-floating">
                     <input type="number" 
-                           class="form-control" 
-                           id="añonac" 
-                           name="añonac" 
-                           placeholder="Año"
-                           value="{{ request.form.get('añonac', '') }}">
+                        class="form-control" 
+                        id="añonac" 
+                        name="añonac" 
+                        placeholder="Año"
+                        value="{{ request.form.get('añonac', '') }}">
                     <label for="añonac">(Año)</label>
                 </div>
             </div>
@@ -66,28 +67,28 @@
 
         <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" id="mujer" name="genero" value="mujer"
-                   {% if request.form.get('genero') == 'mujer' %}checked{% endif %}>
+                {% if request.form.get  %}checked{% endif %}>
             <label class="form-check-label" for="mujer">mujer</label>
         </div>
         <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" id="hombre" name="genero" value="hombre"
-                   {% if request.form.get('genero') == 'hombre' %}checked{% endif %}>
+                {% if request.form.get %}checked{% endif %}>
             <label class="form-check-label" for="hombre">hombre</label>
         </div>
         <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" id="perzonalizado" name="genero" value="perzonalizado"
-                   {% if request.form.get('genero') == 'perzonalizado' %}checked{% endif %}>
+                {% if request.form.get %}checked{% endif %}>
             <label class="form-check-label" for="perzonalizado">perzonalizado</label>
         </div>
 
         <div class="col-6 mb-3 mt-3">
             <label for="email" class="form-label"></label>
             <input type="text" 
-                   class="form-control" 
-                   id="email" 
-                   name="email" 
-                   placeholder="Escribe tu gmail o numero de telefono"
-                   value="{{ request.form.get('email', '') }}">
+                class="form-control" 
+                id="email" 
+                name="email" 
+                placeholder="Escribe tu gmail o numero de telefono"
+                value="{{ request.form.get('email', '') }}">
         </div>
 
         <input type="password" id="contraseña"  name="contraseña" class="form-control mb-3" placeholder="Contraseña"aria-describedby="passwordHelpBlock">
