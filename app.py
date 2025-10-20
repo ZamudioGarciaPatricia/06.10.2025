@@ -25,16 +25,14 @@ def acerca_de():
     return render_template('acerca.html', autor=AUTOR)
 
 
-# 1. Ruta de Inicio de Sesión (Endpoint: sesion)
 @app.route('/sesion')
 def sesion():
     return render_template("sesion.html", autor=AUTOR)
 
-# 2. Ruta de Registro (Endpoint: registro_form)
-# Aquí puedes redirigir a la ruta principal de registro o mostrar un mensaje.
+
 @app.route('/registro') 
 def registro_form():
-    # Es más limpio redirigir a la ruta principal de registro si es GET
+    
     return redirect(url_for('register_user'))
 
 
@@ -58,8 +56,7 @@ def register_user():
             error = "Las contraseñas no coinciden, intenta de nuevo."
         
         
-        if not nombre or not email or not contraseña:
-        error = "Faltan campos obligatorios."
+        
 
         
         if error is not None:
