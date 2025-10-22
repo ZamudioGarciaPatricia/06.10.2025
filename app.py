@@ -54,9 +54,6 @@ def register_user():
 
         if contraseña != conficont:
             error = "Las contraseñas no coinciden, intenta de nuevo."
-        
-        
-        
 
         
         if error is not None:
