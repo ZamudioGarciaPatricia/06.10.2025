@@ -1,116 +1,127 @@
 {% extends "base.html" %}
 
 {% block titulo %}
-    Mi Primer Formulario de Registro
+Mi Primer Formulario de Registro
 {% endblock %}
 
 {% block content %}
-    <div class="container my-4"> <h1 class="text-center">Crea una cuenta</h1>
-        <p class="text-center">Es rápido y fácil</p>
+ <div class="container my-4">
+    <h1 class="text-center">Crea una cuenta</h1>
+    <p class="text-center">Es rápido y fácil</p>
+    
+    <form method="post" action="{{ url_for('register_user')}}" novalidate>
         
-        <form method="post" action="{{ url_for('register_user')}}" novalidate> 
-            
-            <section class="row">
-                <div class="col-md-6 mb-3"> <label for="nombre" class="form-label visually-hidden">Nombre</label> <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre"
-                        value="{{ request.form.get('nombre', '') }}"
-                        required
-                        aria-required="true">
+        <section class="row">
+            <div class="col-md-6 mb-3"> <label for="nombre"
+                    class="form-label visually-hidden">Nombre</label> <input type="text" class="form-control"
+                    id="nombre" name="nombre" placeholder="Nombre"
+                    value="{{ request.form.get('nombre', '') }}" **minlength="3" **
+                    required  aria-required="true">
                 </div>
-                <div class="col-md-6 mb-3"> <label for="apellido" class="form-label visually-hidden">Apellido</label> <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido"
-                        value="{{ request.form.get('apellido', '') }}">
+            <div class="col-md-6 mb-3"> <label for="apellido"
+                    class="form-label visually-hidden">Apellido</label> <input type="text" class="form-control"
+                    id="apellido" name="apellido" placeholder="Apellido"
+                    value="{{ request.form.get('apellido', '') }}"**minlength="3" **>
                 </div>
-            </section>
+             </section>
 
-            <div class="mb-3">
-                <label for="email" class="form-label visually-hidden">Email o número de teléfono</label>
-                <input type="email" 
-                    class="form-control" 
-                    id="email" 
-                    name="email" 
-                    placeholder="Escribe tu correo electrónico"
-                    value="{{ request.form.get('email', '') }}"
+         <div class="mb-3">
+        <label for="email" class="form-label visually-hidden">Email o número de teléfono</label>
+            <input type="email"  class="form-control" id="email"
+                name="email" placeholder="Escribe tu correo electrónico" 
+     value="{{ request.form.get('email', '') }}" required>
+             <div id="emailHelp" class="form-text">
+                 Nunca compartiremos tu correo con nadie más.
+                </div>
+</div>
+
+        <div class="mb-3">
+             <label for="contraseña" class="form-label visually-hidden">Contraseña</label>
+            <input type="password" id="contraseña" name="contraseña" class="form-control"
+                placeholder="Contraseña" required **minlength="6" **>
+             </div>
+        <div class="mb-3">
+            <label for="conficont" class="form-label visually-hidden">Confirmar Contraseña</label>
+             <input type="password" id="conficont" name="conficont" class="form-control"
+                placeholder="Confirmar contraseña" required **minlength="6" **>
+             </div>
+
+
+         <h5 class="mt-4">Fecha de Nacimiento</h5>
+        <section class="row">
+           <div class="col-4 mb-3">
+             <label for="mes" class="form-label visually-hidden">Mes</label>
+              <select class="form-select" id="mes" name="mes" aria-label="Selecciona Mes">
+                  <option value="" {% if not request.form.get('mes') %}selected{% endif %}
+                        disabled>Mes</option>
+                    <option value="enero" {% if request.form.get('mes')=='enero' %}selected{% endif %}>Enero</option>
+                   <option value="febrero" {% if request.form.get('mes')=='febrero'
+                        %}selected{% endif %}>Febrero</option>
+                 <option value="marzo" {% if request.form.get('mes')=='marzo' %}selected{%
+                        endif %}>Marzo</option>
+             
+                </select>
+            </div>
+
+  <div class="col-4 mb-3">
+                <label for="dia" class="form-label visually-hidden">Día</label>
+             <select class="form-select" id="dia" name="dia" aria-label="Selecciona Día">
+                  <option value="" {% if not request.form.get('dia') %}selected{% endif %}
+                        disabled>Día</option>
+                    <option value="1" {% if request.form.get('dia')=='1' %}selected{% endif %}>1</option>
+                <option value="2" {% if request.form.get('dia')=='2' %}selected{% endif %}>2
+                    </option>
+               <option value="3" {% if request.form.get('dia')=='3' %}selected{% endif %}>3
+                    </option>
+                   <option value="4" {% if request.form.get('dia')=='4' %}selected{% endif %}>4
+                    </option>
+                   <option value="5" {% if request.form.get('dia')=='5' %}selected{% endif %}>5
+                    </option>
+            
+                </select>
+        </div>
+ <div class="col-4 mb-3">
+                <label for="añonac" class="form-label visually-hidden">Año de nacimiento</label>
+             <input type="number" class="form-control" 
+               id="añonac"  name="añonac"  placeholder="Año"  
+                    min="1900" **maxlength="4" ** value="{{ request.form.get('añonac', '') }}" 
                     required>
-                <div id="emailHelp" class="form-text">
-                    Nunca compartiremos tu correo con nadie más.
                 </div>
+          </section>
+      
+      <h5 class="mt-4">Género/Sexo</h5>
+        <div class="form-check form-check-inline">
+           <input class="form-check-input" type="radio" id="mujer" name="genero" value="mujer"
+               {% if request.form.get('genero')=='mujer' %}checked{% endif %} required>
+         <label class="form-check-label" for="mujer">Mujer</label>
+          </div>
+       <div class="form-check form-check-inline">
+           <input class="form-check-input" type="radio" id="hombre" name="genero" value="hombre"
+             {% if request.form.get('genero')=='hombre' %}checked{% endif %}>
+           <label class="form-check-label" for="hombre">Hombre</label>
             </div>
+        <div class="form-check form-check-inline">
+           <input class="form-check-input" type="radio" id="personalizado" name="genero"
+                value="personalizado"  {% if request.form.get('genero')=='personalizado' %}checked{%
+                endif %}>
+          <label class="form-check-label" for="personalizado">Personalizado</label>
+        </div>
 
-            <div class="mb-3">
-                <label for="contraseña" class="form-label visually-hidden">Contraseña</label>
-                <input type="password" id="contraseña" name="contraseña" class="form-control" placeholder="Contraseña" required>
-            </div>
-            <div class="mb-3">
-                <label for="conficont" class="form-label visually-hidden">Confirmar Contraseña</label>
-                <input type="password" id="conficont" name="conficont" class="form-control" placeholder="Confirmar contraseña" required>
-            </div>
+        <div class="mt-4">
+            <p class="text-muted small">
+                Al hacer clic en "Regístrate", aceptas nuestros Términos, Política de Datos y Política de Cookies.
+                Esperamos que disfrutes nuestro sitio web con actualizaciones y mensajes personalizados para ti.
+                Recuerda que tu información personal no se comparte y estás seguro. ¡Gracias! :D
+            </p>
 
+            <p>¿Ya tienes cuenta? <a class="link-primary" href="#">Inicia sesión</a></p>
+        </div>
 
-            <h5 class="mt-4">Fecha de Nacimiento</h5>
-            <section class="row">
-                <div class="col-4 mb-3">
-                    <label for="mes" class="form-label visually-hidden">Mes</label>
-                    <select class="form-select" id="mes" name="mes" aria-label="Selecciona Mes">
-                        <option value="" {% if not request.form.get('mes') %}selected{% endif %} disabled>Mes</option> <option value="enero" {% if request.form.get('mes') == 'enero' %}selected{% endif %}>Enero</option>
-                        <option value="febrero" {% if request.form.get('mes') == 'febrero' %}selected{% endif %}>Febrero</option>
-                        <option value="marzo" {% if request.form.get('mes') == 'marzo' %}selected{% endif %}>Marzo</option>
-                        </select>
-                </div>
-
-                <div class="col-4 mb-3">
-                    <label for="dia" class="form-label visually-hidden">Día</label>
-                    <select class="form-select" id="dia" name="dia" aria-label="Selecciona Día">
-                        <option value="" {% if not request.form.get('dia') %}selected{% endif %} disabled>Día</option> <option value="1" {% if request.form.get('dia') == '1' %}selected{% endif %}>1</option>
-                        <option value="2" {% if request.form.get('dia') == '2' %}selected{% endif %}>2</option>
-                        <option value="3" {% if request.form.get('dia') == '3' %}selected{% endif %}>3</option>
-                        <option value="4" {% if request.form.get('dia') == '4' %}selected{% endif %}>4</option>
-                        <option value="5" {% if request.form.get('dia') == '5' %}selected{% endif %}>5</option>
-                        </select>
-                </div>
-
-                <div class="col-4 mb-3">
-                    <label for="añonac" class="form-label visually-hidden">Año de nacimiento</label>
-                    <input type="number" 
-                        class="form-control" 
-                        id="añonac" 
-                        name="añonac" 
-                        placeholder="Año"
-                        min="1900" max="2025" value="{{ request.form.get('añonac', '') }}"
-                        required>
-                </div>
-            </section>
-            
-            <h5 class="mt-4">Género/Sexo</h5>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="mujer" name="genero" value="mujer"
-                    {% if request.form.get('genero') == 'mujer' %}checked{% endif %} required>
-                <label class="form-check-label" for="mujer">Mujer</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="hombre" name="genero" value="hombre"
-                    {% if request.form.get('genero') == 'hombre' %}checked{% endif %}>
-                <label class="form-check-label" for="hombre">Hombre</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="personalizado" name="genero" value="personalizado"
-                    {% if request.form.get('genero') == 'personalizado' %}checked{% endif %}>
-                <label class="form-check-label" for="personalizado">Personalizado</label>
-            </div>
-
-            <div class="mt-4">
-                <p class="text-muted small">
-                    Al hacer clic en "Regístrate", aceptas nuestros Términos, Política de Datos y Política de Cookies. 
-                    Esperamos que disfrutes nuestro sitio web con actualizaciones y mensajes personalizados para ti. 
-                    Recuerda que tu información personal no se comparte y estás seguro. ¡Gracias! :D
-                </p>
-
-                <p>¿Ya tienes cuenta? <a class="link-primary" href="#">Inicia sesión</a></p>
-            </div>
-
-            <section class="mt-4 text-center">
-                <button type="submit" class="btn btn-primary btn-lg">Regístrate</button>
-            </section>
-        </form>
-    </div>
+        <section class="mt-4 text-center">
+            <button type="submit" class="btn btn-primary btn-lg">Regístrate</button>
+        </section>
+    </form>
+</div>
 {% endblock %}
 
 {% block scripts %}{% endblock %}
