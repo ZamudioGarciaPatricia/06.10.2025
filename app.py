@@ -33,7 +33,7 @@ def sesion():
 @app.route('/registro') 
 def registro_form():
     
-    return redirect(url_for('register_user'))
+    return redirect ('/sesion.html')
 
 
 @app.route('/registrandome', methods= ('GET', 'POST'))
