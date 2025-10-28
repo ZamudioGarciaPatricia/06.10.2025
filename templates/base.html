@@ -28,6 +28,24 @@
                     <li class="nav-item"><a class="nav-link" href="/animales">Animales exóticos</a></li>
                     <li class="nav-item"><a class="nav-link" href="/carros">Vehículos antiguos</a></li>
                     <li class="nav-item"><a class="nav-link" href="/maravillas">Las Maravillas del Mundo</a></li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/acerca">Acerca de...</a>
+                    </li>
+                    {% if not session.get("logueado") %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Iniciar Sesión</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/registro">Registrate</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Cerrar Sesión</a>
+                    </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sesion">/Sesion/Registrate/</a>
+                        </li>
                     <li class="nav-item"><a class="nav-link" href="/acerca">Acerca de...</a></li>
                     <li class="nav-item"><a class="nav-link" href="/sesion">¡Registrate!</a></li>
                 </ul>
