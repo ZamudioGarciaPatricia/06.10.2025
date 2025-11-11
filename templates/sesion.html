@@ -12,96 +12,96 @@ Mi Primer Formulario de Registro
     <form id="Formulario" method="post" action="/registro">
         
         <section class="row">
-            <div class="col-md-6 mb-3"> <label for="nombre"
-                    class="form-label visually-hidden">Nombre</label> <input type="text" class="form-control"
-                    id="nombre" name="nombre" placeholder="Nombre"
-                    value="{{ request.form.get('nombre', '') }}" **minlength="3" **
-                    required  aria-required="true">
-                </div>
-            <div class="col-md-6 mb-3"> <label for="apellido"
-                    class="form-label visually-hidden">Apellido</label> <input type="text" class="form-control"
-                    id="apellido" name="apellido" placeholder="Apellido"
-                    value="{{ request.form.get('apellido', '') }}"**minlength="3" **>
-                </div>
-                </section>
-
-            <div class="mb-3">
-        <label for="email" class="form-label visually-hidden">Email o número de teléfono</label>
-            <input type="email"  class="form-control" id="email"
-                name="email" placeholder="Escribe tu correo electrónico" 
-        value="{{ request.form.get('email', '') }}" required>
-                <div id="emailHelp" class="form-text">
-            Nunca compartiremos tu correo con nadie más.
-                </div>
-</div>
+            <div class="col-md-6 mb-3"> 
+                <label for="nombre" class="form-label visually-hidden">Nombre</label> 
+                <input type="text" class="form-control"
+                        id="nombre" name="nombre" placeholder="Nombre"
+                        minlength="3" 
+                        required aria-required="true">
+            </div>
+            <div class="col-md-6 mb-3"> 
+                <label for="apellido" class="form-label visually-hidden">Apellido</label> 
+                <input type="text" class="form-control"
+                        id="apellido" name="apellido" placeholder="Apellido"
+                        minlength="3" required>
+            </div>
+        </section>
 
         <div class="mb-3">
-            <label for="contraseña" class="form-label visually-hidden">Contraseña</label>
-            <input type="password" id="contraseña" name="contraseña" class="form-control"
-                placeholder="Contraseña" required **minlength="6" **>
+            <label for="email" class="form-label visually-hidden">Correo electrónico</label>
+            <input type="email" class="form-control" id="email"
+                    name="email" placeholder="Escribe tu correo electrónico" 
+                    required>
+            <div id="emailHelp" class="form-text">
+                Nunca compartiremos tu correo con nadie más.
             </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="contrasena" class="form-label visually-hidden">Contraseña</label>
+            <input type="password" id="contrasena" name="contrasena" class="form-control"
+                    placeholder="Contraseña" required minlength="6">
+        </div>
         <div class="mb-3">
             <label for="conficont" class="form-label visually-hidden">Confirmar Contraseña</label>
             <input type="password" id="conficont" name="conficont" class="form-control"
-                placeholder="Confirmar contraseña" required **minlength="6" **>
-            </div>
+                    placeholder="Confirmar contraseña" required minlength="6">
+        </div>
 
 
         <h5 class="mt-4">Fecha de Nacimiento</h5>
         <section class="row">
             <div class="col-4 mb-3">
-            <label for="mes" class="form-label visually-hidden">Mes</label>
-            <select class="form-select" id="mes" name="mes" aria-label="Selecciona Mes">
-                <option value="" 
-                        disabled>Mes</option>
-                    <option value="enero" >Enero</option>
-                    <option value="febrero" >Febrero</option>
-                    <option value="marzo" >Marzo</option>
-            
+                <label for="mes" class="form-label visually-hidden">Mes</label>
+                <select class="form-select" id="mes" name="mes" aria-label="Selecciona Mes" required>
+                    <option value="" selected disabled>Mes</option>
+                    <option value="1">Enero</option>
+                    <option value="2">Febrero</option>
+                    <option value="3">Marzo</option>
+                    <option value="4">Abril</option>
+                    <option value="5">Mayo</option>
+                    <option value="6">Junio</option>
+                    <option value="7">Julio</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Septiembre</option>
+                    <option value="10">Octubre</option>
+                    <option value="11">Noviembre</option>
+                    <option value="12">Diciembre</option>
                 </select>
             </div>
 
             <div class="col-4 mb-3">
                 <label for="dia" class="form-label visually-hidden">Día</label>
-            <select class="form-select" id="dia" name="dia" aria-label="Selecciona Día">
-                <option value=""
-                        disabled>Día</option>
-                    <option value="1" >1</option>
-                <option value="2" >2
-                    </option>
-                <option value="3">3
-                    </option>
-                    <option value="4" >4
-                    </option>
-                    <option value="5" >5
-                    </option>
-            
+                <select class="form-select" id="dia" name="dia" aria-label="Selecciona Día" required>
+                    <option value="" selected disabled>Día</option>
+                    <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option>
                 </select>
-        </div>
-    <div class="col-4 mb-3">
+            </div>
+            <div class="col-4 mb-3">
                 <label for="añonac" class="form-label visually-hidden">Año de nacimiento</label>
                 <input type="number" class="form-control" 
-                id="añonac"  name="añonac"  placeholder="Año" 
-                    min="1900" **maxlength="4" ** value="{{ request.form.get('añonac', '') }}" 
-                    required>
-                </div>
-            </section>
+                        id="añonac" name="añonac" placeholder="Año" 
+                        min="1900" max="{{ 'now' | date('Y') }}" 
+                        required>
+            </div>
+        </section>
         
         <h5 class="mt-4">Género/Sexo</h5>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="mujer" name="genero" value="mujer"
-                >
-            <label class="form-check-label" for="mujer">Mujer</label>
+        <div class="row">
+            <div class="col-auto form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="mujer" name="genero" value="mujer"
+                        required>
+                <label class="form-check-label" for="mujer">Mujer</label>
             </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="hombre" name="genero" value="hombre"
-                >
-            <label class="form-check-label" for="hombre">Hombre</label>
+            <div class="col-auto form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="hombre" name="genero" value="hombre">
+                <label class="form-check-label" for="hombre">Hombre</label>
             </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" id="personalizado" name="genero"
-            >
-            <label class="form-check-label" for="personalizado">Personalizado</label>
+            <div class="col-auto form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="personalizado" name="genero"
+                        value="personalizado">
+                <label class="form-check-label" for="personalizado">Personalizado</label>
+            </div>
         </div>
 
         <div class="mt-4">

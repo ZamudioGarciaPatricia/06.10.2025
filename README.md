@@ -18,3 +18,6 @@ _De que trata:Durante las clases del 03.10.2025 al jueves 09.10.2025 elaboramos 
 
 ![Imegan de mi persona](https://github.com/ZamudioGarciaPatricia/06.10.2025/blob/main/yoframework.png)
 
+
+
+### HOLA MIAU MIAU WUUUUU WUIIII
